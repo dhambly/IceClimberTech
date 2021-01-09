@@ -25,6 +25,7 @@ public class StatusColumnCellRenderer extends DefaultTableCellRenderer {
     //Get the status for the current row.
     if (row == 0){
         l.setHorizontalAlignment(JLabel.CENTER);
+       // l.setFont(Font);
         if (col == 0) {
           l.setBackground(Color.MAGENTA);
         } else if (col == 1 || col == 2) {

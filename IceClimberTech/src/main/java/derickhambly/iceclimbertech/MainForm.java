@@ -43,6 +43,7 @@ public class MainForm extends javax.swing.JFrame {
         timingTable = new javax.swing.JTable();
         topHalfBg = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lowerHalfBg = new javax.swing.JPanel();
         buttonPanel = new javax.swing.JPanel();
         grabEdit = new javax.swing.JButton();
@@ -111,19 +112,28 @@ public class MainForm extends javax.swing.JFrame {
         titleLabel.setForeground(new java.awt.Color(204, 204, 204));
         titleLabel.setText("Special Cheer Cancel");
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("made by moobs");
+
         javax.swing.GroupLayout topHalfBgLayout = new javax.swing.GroupLayout(topHalfBg);
         topHalfBg.setLayout(topHalfBgLayout);
         topHalfBgLayout.setHorizontalGroup(
             topHalfBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topHalfBgLayout.createSequentialGroup()
+            .addGroup(topHalfBgLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159))
+                .addGroup(topHalfBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topHalfBgLayout.createSequentialGroup()
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(159, 159, 159))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topHalfBgLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         topHalfBgLayout.setVerticalGroup(
             topHalfBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topHalfBgLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addComponent(jLabel2)
+                .addGap(7, 7, 7)
                 .addComponent(titleLabel)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
@@ -568,6 +578,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

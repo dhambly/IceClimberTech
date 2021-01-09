@@ -11,6 +11,9 @@ import com.studiohartman.jamepad.ControllerManager;
 import com.studiohartman.jamepad.ControllerState;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -35,9 +38,36 @@ public class Main {
         //new NewJFrame().setVisible(true);
         cm = new com.studiohartman.jamepad.ControllerManager();
         cm.initSDLGamepad();
+        
         mf = new MainForm();
         mf.setVisible(true);
+        
         ccPractice();
+    }
+    
+    public static void playSound(boolean b){
+        if (b)
+            playSound("good.wav");
+        else
+            playSound("bad.wav");
+    }
+    
+    public static synchronized void playSound(final String url) {
+        new Thread(new Runnable() {
+        // The wrapper thread is unnecessary, unless it blocks on the
+        // Clip finishing; see comments.
+          public void run() {
+            try {
+              Clip clip = AudioSystem.getClip();
+              AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                Main.class.getResourceAsStream("/resource/" + url));
+              clip.open(inputStream);
+              clip.start(); 
+            } catch (Exception e) {
+              //System.err.println(e.getLocalizedMessage());
+            }
+          }
+        }).start();
     }
     
     private static void ccPractice() {
@@ -98,8 +128,10 @@ public class Main {
                 
                 if (Math.rint(grabtoccms/16.667) == 3 && Math.rint(grabtopummelms/16.667)>=4 && Math.rint(grabtopummelms/16.667) <= 10) {
                     mf.editState("Successful CC");
+                    playSound(true);
                 } else {
                     mf.editState("Unsuccessful CC");
+                    playSound(false);
                 }
                 try {
                     Thread.sleep(200);
@@ -112,6 +144,8 @@ public class Main {
             
         }
     }
+    
+    
     
     private static void resetTimes() {
         for (int i = 0; i < 10; i++) {
