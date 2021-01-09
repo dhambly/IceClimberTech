@@ -18,7 +18,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>derickhambly.iceclimbertech.GUI</mainClass>
+                  <mainClass>derickhambly.iceclimbertech.Main</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
@@ -45,7 +45,7 @@
                 <manifest>
                   <addClasspath>true</addClasspath>
                   <classpathPrefix>lib/</classpathPrefix>
-                  <mainClass>derickhambly.iceclimbertech.GUI</mainClass>
+                  <mainClass>derickhambly.iceclimbertech.Main</mainClass>
                 </manifest>
               </archive>
             </configuration>
